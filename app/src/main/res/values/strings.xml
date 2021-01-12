@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">My Foods</string>
+    <string name="no_reciples">No reciples :(</string>
+    <string name="reciples">The only food API you will ever need. Our knowledge engineers spent years crafting our complex food ontology, which allows us to understand the relationships between ingredients, recipes, nutrition, allergens, and more.</string>
+</resources>
