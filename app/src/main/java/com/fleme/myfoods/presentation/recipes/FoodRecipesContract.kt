@@ -1,8 +1,8 @@
-package com.fleme.myfoods.presentation.main
+package com.fleme.myfoods.presentation.recipes
 
 import com.fleme.myfoods.model.Recipe
 
-interface FoodMainContract {
+interface FoodRecipesContract {
 
     interface View {
         fun showRecipes(recipes: List<Recipe>?)
