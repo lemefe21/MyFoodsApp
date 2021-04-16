@@ -13,8 +13,10 @@ class FoodRecipesPresenter(
     @SuppressLint("CheckResult")
     override fun loadRecipes() {
         repository.loadRecipes()
+            .doOnSubscribe { }
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
+            .doFinally { }
             .subscribe({ response ->
                 view?.showRecipes(response.recipes)
             }, { error ->

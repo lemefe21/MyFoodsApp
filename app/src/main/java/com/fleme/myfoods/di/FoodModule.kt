@@ -13,14 +13,9 @@ import retrofit2.converter.gson.GsonConverterFactory
 object FoodModule {
 
     val instance = module {
-
         single<Retrofit> { createRetrofit() }
-
         single { get<Retrofit>().newBuilder().build().create(FoodsAPI::class.java) }
-
-        single<FoodRepository> {
-            FoodRepositoryImpl(foodAPI = get())
-        }
+        single<FoodRepository> { FoodRepositoryImpl(foodAPI = get()) }
 
         factory<FoodRecipesContract.Presenter> { (view: FoodRecipesContract.View) ->
             FoodRecipesPresenter(view, repository = get())
