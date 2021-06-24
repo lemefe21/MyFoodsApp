@@ -15,10 +15,12 @@ class FoodMainPresenter(
         repository.loadRecipes()
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
-            .subscribe({ response ->
-                view?.showRecipes(response.recipes)
+            .subscribe({ next ->
+                view?.showRecipes(next.recipes)
             }, { error ->
                 error.printStackTrace()
+            }, {
+                //onComplete >> optional!
             })
     }
 
