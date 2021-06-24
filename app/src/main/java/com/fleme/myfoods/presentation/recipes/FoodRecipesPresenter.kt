@@ -19,8 +19,6 @@ class FoodRecipesPresenter(
                 view?.showRecipes(next.recipes)
             }, { error ->
                 error.printStackTrace()
-            }, {
-                //onComplete >> optional!
             })
     }
 
