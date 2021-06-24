@@ -33,4 +33,10 @@ class FoodMainActivity : AppCompatActivity() {
         super.onDestroy()
         unloadKoinModules(module)
     }
+
+    //TODO - Implement list layout
+    //TODO - Implement item list layout
+    //TODO - Implement empty/error list layout
+    //TODO - Implement list adapter list
+    //TODO - Implement Paging
 }
