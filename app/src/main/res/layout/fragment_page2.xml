@@ -17,4 +17,11 @@
         android:scaleType="centerCrop"
         tools:src="@drawable/play"/>
 
+    <View
+        android:id="@+id/shadow_divider"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@drawable/shadow"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
