@@ -19,11 +19,11 @@
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/pager1"
         android:layout_width="0dp"
-        android:layout_height="200dp"
+        android:layout_height="160dp"
         android:layout_marginTop="150dp"
         android:clipToPadding="false"
         android:minHeight="120sp"
-        android:padding="22dp"
+        android:paddingHorizontal="36dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

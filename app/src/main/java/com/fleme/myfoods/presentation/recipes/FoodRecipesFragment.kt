@@ -75,7 +75,7 @@ class FoodRecipesFragment : Fragment(), FoodRecipesContract.View {
 //            tab.text = "OBJECT ${(position + 1)}"
 //        }.attach()
 
-        pager1.pageMargin = 22
+        pager1.pageMargin = 20
         pager1.adapter = demoCollectionAdapter
         pager2.adapter = demoCollectionAdapter2
 
