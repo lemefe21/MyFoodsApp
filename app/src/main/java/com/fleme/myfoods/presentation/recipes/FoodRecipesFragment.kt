@@ -79,35 +79,15 @@ class FoodRecipesFragment : Fragment(), FoodRecipesContract.View {
         pager1.adapter = demoCollectionAdapter
         pager2.adapter = demoCollectionAdapter2
 
-//        pager1.addOnPageChangeListener(object : ViewPager.SimpleOnPageChangeListener() {
-//
-//            private var scrollStateIdle = ViewPager.SCROLL_STATE_IDLE
-//
-//            override fun onPageScrolled(
-//                position: Int,
-//                positionOffset: Float,
-//                positionOffsetPixels: Int
-//            ) {
-//                if(scrollStateIdle == ViewPager.SCROLL_STATE_IDLE) return
-//                pager2.scrollTo(pager1.scrollX, pager1.scrollY)
-//            }
-//
-//            override fun onPageScrollStateChanged(state: Int) {
-//                scrollStateIdle = state
-//                if (state == ViewPager.SCROLL_STATE_IDLE) {
-//                    pager2.setCurrentItem(pager1.currentItem, false);
-//                }
-//            }
-//        })
 
         pager1.setOnTouchListener { _, event ->
             pager1.onTouchEvent(event)
             pager2.onTouchEvent(event)
         }
 
-//        pager2.setOnTouchListener { _, event ->
-//            pager1.onTouchEvent(event)
-//        }
+        pager2.setOnTouchListener { _, _ ->
+            true
+        }
 
 //        pager2.addOnPageChangeListener(object : ViewPager.SimpleOnPageChangeListener() {
 //
