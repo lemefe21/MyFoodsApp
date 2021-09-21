@@ -5,7 +5,7 @@ import com.fleme.myfoods.model.Recipe
 interface FoodRecipesContract {
 
     interface View {
-        fun showRecipes(recipes: List<Recipe>?)
+        fun showRecipes(recipes: MutableList<Recipe>?)
     }
 
     interface Presenter {

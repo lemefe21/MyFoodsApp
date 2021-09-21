@@ -3,7 +3,7 @@ package com.fleme.myfoods.model
 import com.google.gson.annotations.SerializedName
 
 data class RecipeResponse(
-    @SerializedName("results") val recipes: List<Recipe>?
+    @SerializedName("results") val recipes: MutableList<Recipe>?
 )
 
 data class Recipe(
