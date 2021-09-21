@@ -10,6 +10,7 @@ private const val RECIPES = "/recipes/complexSearch"
 interface FoodsAPI {
     @GET(RECIPES)
     fun loadRecipes(
-        @Query("apiKey") apiKey: String
+        @Query("apiKey") apiKey: String,
+        @Query("number") number: Int
     ) : Observable<RecipeResponse>
 }

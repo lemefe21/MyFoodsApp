@@ -10,7 +10,11 @@ class FoodRepositoryImpl(
 ): FoodRepository {
 
     override fun loadRecipes(): Observable<RecipeResponse> {
-        return foodAPI.loadRecipes(BuildConfig.API_KEY)
+        return foodAPI.loadRecipes(BuildConfig.API_KEY, SIZE)
+    }
+
+    companion object {
+        private const val SIZE = 20
     }
 
 }

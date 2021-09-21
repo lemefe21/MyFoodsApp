@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
@@ -24,11 +25,12 @@ class FoodRecipesFragment :
     private lateinit var recipesAdapter: FoodRecipesAdapter
 
     private var recipesList: RecyclerView? = null
+    private var recipeCount: TextView? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        recipesAdapter = FoodRecipesAdapter(this)
+        recipesAdapter = FoodRecipesAdapter(context, this)
 
         presenter.loadRecipes()
     }
@@ -44,6 +46,7 @@ class FoodRecipesFragment :
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         view.run {
             recipesList = findViewById(R.id.rv_recipes)
+            recipeCount = findViewById(R.id.tv_recipes_count)
         }
     }
 
@@ -52,12 +55,20 @@ class FoodRecipesFragment :
             recipesList?.adapter = recipesAdapter
             recipesAdapter.run {
                 recipesList.addAll(it)
+                setRecipeViewCount(recipesList.size)
                 notifyDataSetChanged()
             }
         }
     }
 
+    private fun setRecipeViewCount(listCount: Int) {
+        recipeCount?.visibility = View.VISIBLE
+        recipeCount?.text = context?.resources?.getString(
+            R.string.total_recipes, listCount.toString()
+        )
+    }
+
     override fun onItemClicked(recipeItem: Recipe) {
-        Toast.makeText(context, recipeItem.id, Toast.LENGTH_SHORT).show()
+        Toast.makeText(context, recipeItem.id.toString(), Toast.LENGTH_SHORT).show()
     }
 }

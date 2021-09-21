@@ -1,5 +1,6 @@
 package com.fleme.myfoods.presentation.recipes.adapter
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,6 +12,7 @@ import com.fleme.myfoods.model.Recipe
 import com.squareup.picasso.Picasso
 
 class FoodRecipesAdapter(
+    val context: Context?,
     val listener: FoodRecipesAdapterListener?
 ) : RecyclerView.Adapter<FoodRecipesAdapter.FoodRecipesViewHolder>() {
 
